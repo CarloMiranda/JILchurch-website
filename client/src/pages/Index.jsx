@@ -7,6 +7,9 @@ import Church from './Church';
 import Contact from './Contact';
 import Outreach from './Outreach';
 import Network from './Network';
+import Resources from './Resources'; 
+import Articles from './Articles';
+import BroEddie from './BroEddie';
 
 
 function Index() {
@@ -17,6 +20,9 @@ function Index() {
                 <Route path="/" element={< Layout />}>
                     <Route index element={< Home />}/>
                     <Route path="/bulletins" element={< Bulletins />}/>
+                    <Route path="/articles" element={< Articles />}/>
+                    <Route path="/resources" element={< Resources />}/>
+                    <Route path="/broeddie" element={< BroEddie />}/>
                     <Route path="/ministry" element={< Ministry />}/>
                     <Route path="/outreach" element={< Outreach />}/>
                     <Route path="/network" element={< Network />}/>

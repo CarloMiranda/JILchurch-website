@@ -1,16 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import '../css/Index.css';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import logo from '../images/logo.png';
 import ScrollToTopButton from "./ScrollToTopButton";
 import { FaInstagram, FaTwitter, FaFacebook, FaYoutube, FaPhone, FaMapMarker,FaEnvelope } from "react-icons/fa";
 
 function Layout() {
 
+    const location = useLocation();
+    useEffect(() => {
+        if (location.pathname === '/') {
+            document.title = 'Home - JIL Church';
+        } else if (location.pathname === '/articles') {
+            document.title = 'Articles - JIL Church';
+        } else if (location.pathname === '/resources') {
+            document.title = 'Resources - JIL Church';
+        } else if (location.pathname === '/network') {
+            document.title = 'Network - JIL Church';
+        } else if (location.pathname === '/church') {
+            document.title = 'Church - JIL Church';
+        } else if (location.pathname === '/contact') {
+            document.title = 'Contact Us - JIL Church';
+        } else if (location.pathname === '/broeddie') {
+            document.title = 'Bro. Eddie - JIL Church';
+        }
+    }, [location]);
+
     return(
         <div className="layout">
             <div className="navbar navbar-expand-lg">
-                    <Link to="/" className='navbar-brand col-1 justify-content-end d-flex ms-5'><img src={logo} alt="Church logo" /></Link>
+                    <Link to="/" className='navbar-brand col-1 justify-content-end d-flex ms-5'><img src={logo} alt="Church logo" className='img-fluid' /></Link>
                     <button className="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -21,8 +40,8 @@ function Layout() {
                                 BULLETINS
                             </a>
                             <ul className="dropdown-menu fs-4">
-                                <li><a className="dropdown-item top" href="#">Articles</a></li>
-                                <li><a className="dropdown-item" href="#">Resources</a></li>
+                                <li><Link to="/articles" className='dropdown-item'>ARTICLES</Link></li>
+                                <li><Link to="/resources" className='dropdown-item'>RESOURECES</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
@@ -30,7 +49,7 @@ function Layout() {
                                 MINISTRIES
                             </a>
                             <ul className="dropdown-menu fs-4">
-                                <li><a className="dropdown-item top" href="#">WAN</a></li>
+                                <li><a className="dropdown-item" href="#">WAN</a></li>
                                 <li><a className="dropdown-item" href="#">SOS</a></li>
                                 <li><a className="dropdown-item" href="#">Lifegroup</a></li>
                             </ul>
@@ -40,7 +59,7 @@ function Layout() {
                                 OUTREACH
                             </a>
                             <ul className="dropdown-menu fs-4">
-                                <li><a className="dropdown-item top" href="#">JIL San Jose Patag</a></li>
+                                <li><a className="dropdown-item" href="#">JIL San Jose Patag</a></li>
                                 <li><a className="dropdown-item" href="#">JIL Bulac</a></li>
                                 <li><a className="dropdown-item" href="#">JIL Catmon</a></li>
                                 <li><a className="dropdown-item" href="#">JIL Caysio</a></li>
