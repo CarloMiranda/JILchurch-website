@@ -67,12 +67,10 @@ html{
 .dropdown-menu a {
     color: rgb(45, 65, 179);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 150px;
-    padding: 15px;
+    padding: 10px 20px;
 }
 
 .nav > li > .dropdown-menu {
-    margin-top: 20px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     display: block;

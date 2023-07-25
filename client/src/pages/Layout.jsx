@@ -35,12 +35,20 @@ function Layout() {
                                 <li><a className="dropdown-item" href="#">Lifegroup</a></li>
                             </ul>
                         </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                OUTREACH
+                            </a>
+                            <ul className="dropdown-menu fs-4">
+                                <li><a className="dropdown-item top" href="#">JIL San Jose Patag</a></li>
+                                <li><a className="dropdown-item" href="#">JIL Bulac</a></li>
+                                <li><a className="dropdown-item" href="#">JIL Catmon</a></li>
+                                <li><a className="dropdown-item" href="#">JIL Caysio</a></li>
+                            </ul>
+                        </li>
                         {/* <li className="nav-item">
                             <Link to="/ministry" className='nav-link'>MINISTRY</Link>
                         </li> */}
-                        <li className="nav-item">
-                            <Link to="/outreach" className='nav-link text-white'>OUTREACH</Link>
-                        </li>
                         <li className="nav-item">
                             <Link to="/network" className='nav-link text-white'>NETWORK</Link>
                         </li>
